@@ -6,7 +6,7 @@ import './App.css';
 
 const ComponentToPrint = React.forwardRef((props, ref) => (
   <div className='creation-zone' ref={ref}>
-    <img src="https://img.freepik.com/free-vector/scary-pumpkin-halloween-lantern-realistic-vector_1441-733.jpg?w=600" />
+    <img src={process.env.PUBLIC_URL + '/Images/' + 'example.png'}/>
   </div>
 ));
 
