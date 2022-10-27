@@ -1,17 +1,34 @@
-import {exportComponentAsPNG} from 'react-component-export-image';
 import React from 'react';
-import { useRef } from 'react';
+import html2canvas from 'html2canvas';
 
 import './App.css';
 
-const ComponentToPrint = React.forwardRef((props, ref) => (
-  <div className='creation-zone' ref={ref}>
-    <img src={process.env.PUBLIC_URL + '/Images/' + 'example.png'}/>
-  </div>
-));
 
 function App() {
-  const componentRef = useRef();
+
+  const handleDownload = async () => {
+    const element = document.getElementById('canvas'),
+    canvas = await html2canvas(element),
+    data = canvas.toDataURL('image/jpg'),
+    link = document.createElement('a');
+ 
+    link.href = data;
+    link.download = 'downloaded-image.jpg';
+ 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const addPumpkin = (pumpkin) => {
+    const node = document.createElement("img");
+    node.src = process.env.PUBLIC_URL + '/Images/' + pumpkin
+
+    document.getElementById('canvas').appendChild(node)
+
+  }
+
+  const selectedPumpkin = 'example.png'
 
   return (
     <div className="App">
@@ -20,17 +37,18 @@ function App() {
       </header>
       <main>
         <p>Your Masterpiece</p>
-      <button onClick={() => exportComponentAsPNG(componentRef)}>
-        Export As PNG
-      </button>
-      <div className='zone-container'>
+        <button onClick={() => addPumpkin('example.png')}>Add Pumpkin</button>
+        <button onClick={() => handleDownload()}>
+          Export As PNG
+        </button>
+        <div className='zone-container'>
+          <div id='canvas' className='creation-zone'>
+          
+          </div>
+          <div className='options-zone'>
 
-        <ComponentToPrint ref={componentRef} />
-
-        <div className='options-zone'>
-
+          </div>
         </div>
-      </div>
 
       </main>
     </div>
