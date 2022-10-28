@@ -11,14 +11,14 @@ function App() {
       <main>
         <div className='zone-container'>
           <div id='canvas' className='creation-zone'>
-          
+            <img className='glow' src={process.env.PUBLIC_URL + '/Images/Glow.png'} alt="" />
           </div>
         </div>
        <Options/>
       </main>
-      <footer>
+      {/* <footer>
 
-      </footer>
+      </footer> */}
     </div>
   );
 }

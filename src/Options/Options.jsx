@@ -176,7 +176,7 @@ function Options() {
         )  
     } else if (isEditing === 3) {
         return (
-            <div className='options-container'>
+            <div className='scroll-options-container'>
             <div className='features-options-zone'>
               <div className='option-button' onClick={() => addEyes("Eyes-1.png")}>
                 <img className='features' src={process.env.PUBLIC_URL + '/Images/Eyes-1.png'} alt="" />
@@ -216,7 +216,7 @@ function Options() {
         )
     }  else if (isEditing === 4) {
         return (
-            <div className='options-container'>
+            <div className='scroll-options-container'>
             <div className='features-options-zone'>
               <div className='option-button' onClick={() => addNose("Nose-1.png")}>
                 <img className='features' src={process.env.PUBLIC_URL + '/Images/Nose-1.png'} alt="" />
@@ -256,7 +256,7 @@ function Options() {
         )
     }   else if (isEditing === 5) {
         return (
-            <div className='options-container'>
+            <div className='scroll-options-container'>
             <div className='features-options-zone'>
               <div className='option-button' onClick={() => addMouth("Mouth-1.png")}>
                 <img className='features' src={process.env.PUBLIC_URL + '/Images/Mouth-1.png'} alt="" />

@@ -17,7 +17,7 @@
 
 main {
   padding-top: 20px;
-  background-image: url('../public/Images/Desktop.png');
+  /* background-image: url('../public/Images/Desktop.png'); */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -26,24 +26,19 @@ main {
   color: white;
 }
 
-footer {
-  min-height: 100px;
-  background-color: #1b083d;
-}
-
 .zone-container {
+  margin-top: -50px;
   position: relative;
-  width: 600px;
+  width: 850px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .creation-zone {
   position: absolute;
-  /* background-color: white; */
-  width: 600px;
-  height: 600px;
-  left: 20px;
+  width: 850px;
+  height: 850px;
+  /* border: 1px solid white; */
 }
 
 .options-zone {
@@ -73,8 +68,9 @@ footer {
 }
 
 .features-options-zone {
+
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.100);
+  /* background-color: rgba(255, 255, 255, 0.100); */
   width: 690px;
   height: 150px;
   overflow-x: scroll;
@@ -93,13 +89,13 @@ footer {
 
   /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background-color: orange;
   border-radius: 5px;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: rgba(255, 166, 0, 0.500);
   }
 
 .options-container {
@@ -110,38 +106,60 @@ footer {
   margin-right: auto;
   height: 140px;
   margin-top: 700px;
-  margin-bottom: 60px;
+  /* margin-bottom: 60px; */
   display: flex;
   flex-wrap: nowrap;
+  border-radius: 5px;
+}
+
+.scroll-options-container {
+  background-color: rgba(255, 255, 255, 0.100);
+  position: relative;
+  width: 690px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 140px;
+  margin-top: 700px;
+  /* margin-bottom: 60px; */
+  display: flex;
+  flex-wrap: nowrap;
+  border-radius: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .pumpkin {
   position: absolute;
   z-index: 1;
-  left: 0;
-  bottom: 0;
-  min-height: 600px;
-  max-height: 600px;
+  left: 25px;
+  bottom: 200px;
+  min-height: 800px;
+  max-height: 800px;
 }
 
 .eyes {
   position: absolute;
-  bottom: 150px;
-  left: 175px;
+  bottom: 440px;
+  left: 300px;
   z-index: 2;
+}
+
+.glow {
+  position: absolute;
+  left: 0px;
 }
 
 .nose {
   position: absolute;
-  bottom: 90px;
-  left: 175px;
+  bottom: 370px;
+  left: 300px;
   z-index: 2;
 }
 
 .mouth {
   position: absolute;
-  bottom: 30px;
-  left: 175px;
+  bottom: 290px;
+  left: 300px;
   z-index: 2;
 }
 
@@ -154,6 +172,7 @@ footer {
   margin-right: 5px;
   margin-top: 20px;
   position: relative;
+  border-radius: 5px;
 }
 
 .option-button:hover {
