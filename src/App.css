@@ -73,8 +73,22 @@ footer {
 
 .eyes {
   position: absolute;
-  bottom: 200px;
-  left: 190px;
+  bottom: 150px;
+  left: 175px;
+  z-index: 2;
+}
+
+.nose {
+  position: absolute;
+  bottom: 90px;
+  left: 175px;
+  z-index: 2;
+}
+
+.mouth {
+  position: absolute;
+  bottom: 30px;
+  left: 175px;
   z-index: 2;
 }
 
@@ -86,6 +100,7 @@ footer {
   margin-left: 5px;
   margin-right: 5px;
   margin-top: 20px;
+  position: relative;
 }
 
 .option-button:hover {
@@ -93,11 +108,20 @@ footer {
 }
 
 .no-margin {
-  margin: auto auto auto 10px;
+  position: absolute;
+  height: 48px;
+  width: 100px;
+  margin: 0;
   padding: 0;
-  /* line-height: 100px; */
-  margin-left: auto;
-  margin-right: auto;
+  line-height: 48px;
+  top: 52px;
+}
+
+.features {
+  position: absolute;
+  top: 10px;
+  width: 100px;
+  height: 52px;
 }
 
 /* #canvas {

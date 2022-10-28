@@ -54,10 +54,7 @@ function Options() {
     
       }
     
-      const addEyes = (event) => {
-        if (event.target.value === 'none') {
-    
-        } else {
+      const addEyes = (eyes) => {
         const element = document.getElementById('canvas')
         for ( const child of element.children ){
           console.log(child);
@@ -66,14 +63,46 @@ function Options() {
           }
         }
     
-        console.log(event.target.value);
+        console.log(eyes);
         const node = document.createElement("img");
-        node.src = process.env.PUBLIC_URL + '/Images/' + event.target.value
+        node.src = process.env.PUBLIC_URL + '/Images/' + eyes
     
         node.classList.add("eyes")
         document.getElementById('canvas').appendChild(node)
-    
       }
+
+      const addNose = (nose) => {
+        const element = document.getElementById('canvas')
+        for ( const child of element.children ){
+          console.log(child);
+          if (child.classList.contains('nose')) {
+            element.removeChild(child)
+          }
+        }
+    
+        console.log(nose);
+        const node = document.createElement("img");
+        node.src = process.env.PUBLIC_URL + '/Images/' + nose
+    
+        node.classList.add("nose")
+        document.getElementById('canvas').appendChild(node)
+      }
+
+      const addMouth = (mouth) => {
+        const element = document.getElementById('canvas')
+        for ( const child of element.children ){
+          console.log(child);
+          if (child.classList.contains('mouth')) {
+            element.removeChild(child)
+          }
+        }
+    
+        console.log(mouth);
+        const node = document.createElement("img");
+        node.src = process.env.PUBLIC_URL + '/Images/' + mouth
+    
+        node.classList.add("mouth")
+        document.getElementById('canvas').appendChild(node)
       }
 
     if (isEditing === 0) {
@@ -147,7 +176,7 @@ function Options() {
               <div className='nose-option option-button' onClick={() => addPumpkin(currentColor + "_Pear.png")}>
                 <img src={process.env.PUBLIC_URL + '/Images/Gourd.png'} alt="" />
               </div>
-              <div className='nose-option option-button' onClick={() => changeEditing(0)}>
+              <div className='option-button' onClick={() => changeEditing(0)}>
                 <p>back</p>
               </div>
             </div>
@@ -169,8 +198,158 @@ function Options() {
               <div className='option-button' onClick={() => addPumpkin("Black_" + currentShape)}>
                 <img src={process.env.PUBLIC_URL + '/Images/Black.png'} alt="" />
               </div>
-              <div className='nose-option option-button' onClick={() => changeEditing(0)}>
+              <div className='option-button' onClick={() => changeEditing(0)}>
                 <p>back</p>
+              </div>
+            </div>
+          </div>
+        )  
+    } else if (isEditing === 3) {
+        return (
+            <div className='options-container'>
+            <div className='options-zone'>
+              <div className='option-button' onClick={() => addEyes("Eyes-1.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Eyes-1.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addEyes("Eyes-2.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Eyes-2.png'} alt="" />
+                <p className='no-margin'>Circle</p>
+              </div>
+              <div className='option-button' onClick={() => addEyes("Eyes-3.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Eyes-3.png'} alt="" />
+                <p className='no-margin'>Cartoon</p>
+              </div>
+              <div className='option-button' onClick={() => addEyes("Eyes-4.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Eyes-4.png'} alt="" />
+                <p className='no-margin'>Mad Circle</p>
+              </div>
+              <div className='option-button' onClick={() => addEyes("Eyes-5.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Eyes-5.png'} alt="" />
+                <p className='no-margin'>Cat</p>
+              </div>
+              <div className='option-button' onClick={() => addEyes("Eyes-6.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Eyes-6.png'} alt="" />
+                <p className='no-margin'>Cat</p>
+              </div>
+              <div className='option-button' onClick={() => addEyes("Eyes-7.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Eyes-7.png'} alt="" />
+                <p className='no-margin'>Cat</p>
+              </div>
+              <div className='option-button' onClick={() => addEyes("Eyes-8.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Eyes-8.png'} alt="" />
+                <p className='no-margin'>Cat</p>
+              </div>
+              <div className='option-button' onClick={() => addEyes("Eyes-9.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Eyes-9.png'} alt="" />
+                <p className='no-margin'>Cat</p>
+              </div>
+              <div className='option-button' onClick={() => addEyes("Eyes-10.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Eyes-10.png'} alt="" />
+                <p className='no-margin'>Cat</p>
+              </div>
+              <div className='option-button' onClick={() => changeEditing(0)}>
+                <p className='no-margin'>back</p>
+              </div>
+            </div>
+          </div>
+        )
+    }  else if (isEditing === 4) {
+        return (
+            <div className='options-container'>
+            <div className='options-zone'>
+              <div className='option-button' onClick={() => addNose("Nose-1.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Nose-1.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addNose("Nose-2.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Nose-2.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addNose("Nose-3.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Nose-3.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addNose("Nose-4.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Nose-4.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addNose("Nose-5.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Nose-5.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addNose("Nose-6.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Nose-6.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addNose("Nose-7.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Nose-7.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addNose("Nose-8.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Nose-8.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addNose("Nose-9.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Nose-9.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addNose("Nose-10.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Nose-10.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => changeEditing(0)}>
+                <p className='no-margin'>back</p>
+              </div>
+            </div>
+          </div>
+        )
+    }   else if (isEditing === 5) {
+        return (
+            <div className='options-container'>
+            <div className='options-zone'>
+              <div className='option-button' onClick={() => addMouth("Mouth-1.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Mouth-1.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addMouth("Mouth-2.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Mouth-2.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addMouth("Mouth-3.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Mouth-3.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addMouth("Mouth-4.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Mouth-4.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addMouth("Mouth-5.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Mouth-5.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addMouth("Mouth-6.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Mouth-6.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addMouth("Mouth-7.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Mouth-7.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addMouth("Mouth-8.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Mouth-8.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addMouth("Mouth-9.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Mouth-9.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => addMouth("Mouth-10.png")}>
+                <img className='features' src={process.env.PUBLIC_URL + '/Images/Mouth-10.png'} alt="" />
+                <p className='no-margin'>Traditional</p>
+              </div>
+              <div className='option-button' onClick={() => changeEditing(0)}>
+                <p className='no-margin'>back</p>
               </div>
             </div>
           </div>
