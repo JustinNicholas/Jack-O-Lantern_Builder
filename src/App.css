@@ -48,18 +48,71 @@ footer {
 
 .options-zone {
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.100);
-  width: 690px;
+  width: 660px;
   height: 140px;
+  /* overflow-x: scroll;
+  overflow-y: hidden; */
+  display: inline-flex;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  left: 15px;
 }
 
+.pumpkin-options-zone {
+  position: absolute;
+  width: 550px;
+  height: 140px;
+  /* overflow-x: scroll;
+  overflow-y: hidden; */
+  display: inline-flex;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  left: 65px;
+}
+
+.features-options-zone {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.100);
+  width: 690px;
+  height: 150px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: inline-flex;
+}
+  ::-webkit-scrollbar {
+  width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+  }
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  }
+
 .options-container {
+  background-color: rgba(255, 255, 255, 0.100);
+  position: relative;
   width: 690px;
   margin-left: auto;
   margin-right: auto;
   height: 140px;
   margin-top: 700px;
   margin-bottom: 60px;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .pumpkin {
@@ -93,10 +146,10 @@ footer {
 }
 
 .option-button {
-  width: 100px;
+  min-width: 100px;
   height: 100px;
   background-color: rgba(255, 255, 255, 0.100);
-  display: inline-flex;
+  /* display: inline-flex; */
   margin-left: 5px;
   margin-right: 5px;
   margin-top: 20px;
@@ -119,7 +172,8 @@ footer {
 
 .features {
   position: absolute;
-  top: 10px;
+  left: 0;
+  top: 24px;
   width: 100px;
   height: 52px;
 }
