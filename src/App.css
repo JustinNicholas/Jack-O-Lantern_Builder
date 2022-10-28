@@ -162,12 +162,13 @@ footer {
 
 .no-margin {
   position: absolute;
-  height: 48px;
+  height: 100px;
   width: 100px;
   margin: 0;
   padding: 0;
-  line-height: 48px;
-  top: 52px;
+  line-height: 100px;
+  top: 0px;
+  font-weight: bold;
 }
 
 .features {
