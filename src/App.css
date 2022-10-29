@@ -26,6 +26,11 @@ main {
   color: white;
 }
 
+footer {
+  height: 25px;
+  background-color: #1b083d;
+}
+
 .zone-container {
   margin-top: -50px;
   position: relative;
@@ -196,6 +201,18 @@ main {
   top: 24px;
   width: 100px;
   height: 52px;
+}
+
+.logo{
+  position: absolute;
+  left: 20px;
+  z-index: 5;
+}
+
+.byoj {
+  position: absolute;
+  right: 20px;
+  z-index: 5;
 }
 
 /* #canvas {
