@@ -19,19 +19,32 @@ function Options() {
       console.log(num);
     }
 
-    const handleDownload = async () => {
+    const handleDownload = () => {
+      const element = document.getElementById('canvas')
+      for ( const child of element.children ){
+        console.log(child);
+        if (child.classList.contains('animated')) {
+          child.classList.remove('animated')
+        }
+      }
+      setTimeout(() => {
+        download();
+      }, '200')
+      };
+
+      const download = async () => {
         const element = document.getElementById('canvas'),
         canvas = await html2canvas(element),
         data = canvas.toDataURL('image/jpg'),
         link = document.createElement('a');
-     
-        link.href = data;
-        link.download = 'downloaded-image.jpg';
-     
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      };
+
+          link.href = data;
+          link.download = 'Jack-O-Lantern.jpg';
+      
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+      }
     
       const addPumpkin = (pumpkin) => {
         const element = document.getElementById('canvas')
@@ -50,6 +63,7 @@ function Options() {
         node.src = process.env.PUBLIC_URL + '/Images/' + pumpkin
     
         node.classList.add("pumpkin")
+        node.classList.add("animated")
         document.getElementById('canvas').appendChild(node)
     
       }
@@ -68,6 +82,7 @@ function Options() {
         node.src = process.env.PUBLIC_URL + '/Images/' + eyes
     
         node.classList.add("eyes")
+        node.classList.add("animated")
         document.getElementById('canvas').appendChild(node)
       }
 
@@ -85,6 +100,7 @@ function Options() {
         node.src = process.env.PUBLIC_URL + '/Images/' + nose
     
         node.classList.add("nose")
+        node.classList.add("animated")
         document.getElementById('canvas').appendChild(node)
       }
 
@@ -102,6 +118,7 @@ function Options() {
         node.src = process.env.PUBLIC_URL + '/Images/' + mouth
     
         node.classList.add("mouth")
+        node.classList.add("animated")
         document.getElementById('canvas').appendChild(node)
       }
 
@@ -132,7 +149,10 @@ function Options() {
     )
     } else if (isEditing === 1) {
         return (
-            <div className='options-container'>
+          <div className='options-container'>
+              <div className='option-button back-button' onClick={() => changeEditing(0)}>
+                <p className='no-margin'>Back</p>
+              </div>
             <div className='pumpkin-options-zone'>
               <div className='shape-option option-button' onClick={() => addPumpkin(currentColor + "_Simple.png")}>
                 <img src={process.env.PUBLIC_URL + '/Images/Perfect.png'} alt="" />
@@ -146,15 +166,15 @@ function Options() {
               <div className='nose-option option-button' onClick={() => addPumpkin(currentColor + "_Pear.png")}>
                 <img src={process.env.PUBLIC_URL + '/Images/Gourd.png'} alt="" />
               </div>
-              <div className='option-button' onClick={() => changeEditing(0)}>
-                <p className='no-margin'>Back</p>
-              </div>
             </div>
           </div>
         ) 
     } else if (isEditing === 2) {
         return (
-            <div className='options-container'>
+          <div className='options-container'>
+              <div className='option-button back-button' onClick={() => changeEditing(0)}>
+                <p className='no-margin'>Back</p>
+              </div>
             <div className='pumpkin-options-zone'>
               <div className='option-button' onClick={() => addPumpkin("Orange_" + currentShape)}>
                 <img src={process.env.PUBLIC_URL + '/Images/Orange.png'} alt="" />
@@ -168,15 +188,15 @@ function Options() {
               <div className='option-button' onClick={() => addPumpkin("Black_" + currentShape)}>
                 <img src={process.env.PUBLIC_URL + '/Images/Black.png'} alt="" />
               </div>
-              <div className='option-button' onClick={() => changeEditing(0)}>
-                <p className='no-margin'>Back</p>
-              </div>
             </div>
           </div>
         )  
     } else if (isEditing === 3) {
         return (
             <div className='scroll-options-container'>
+              <div className='option-button back-button' onClick={() => changeEditing(0)}>
+                <p className='no-margin'>Back</p>
+              </div>
             <div className='features-options-zone'>
               <div className='option-button' onClick={() => addEyes("Eyes-1.png")}>
                 <img className='features' src={process.env.PUBLIC_URL + '/Images/Eyes-1.png'} alt="" />
@@ -208,15 +228,15 @@ function Options() {
               <div className='option-button' onClick={() => addEyes("Eyes-10.png")}>
                 <img className='features' src={process.env.PUBLIC_URL + '/Images/Eyes-10.png'} alt="" />
               </div>
-              <div className='option-button' onClick={() => changeEditing(0)}>
-                <p className='no-margin'>Back</p>
-              </div>
             </div>
           </div>
         )
     }  else if (isEditing === 4) {
         return (
             <div className='scroll-options-container'>
+              <div className='option-button back-button' onClick={() => changeEditing(0)}>
+                <p className='no-margin'>Back</p>
+              </div>
             <div className='features-options-zone'>
               <div className='option-button' onClick={() => addNose("Nose-1.png")}>
                 <img className='features' src={process.env.PUBLIC_URL + '/Images/Nose-1.png'} alt="" />
@@ -248,15 +268,15 @@ function Options() {
               <div className='option-button' onClick={() => addNose("Nose-10.png")}>
                 <img className='features' src={process.env.PUBLIC_URL + '/Images/Nose-10.png'} alt="" />
               </div>
-              <div className='option-button' onClick={() => changeEditing(0)}>
-                <p className='no-margin'>Back</p>
-              </div>
             </div>
           </div>
         )
     }   else if (isEditing === 5) {
         return (
             <div className='scroll-options-container'>
+              <div className='option-button back-button' onClick={() => changeEditing(0)}>
+                <p className='no-margin'>Back</p>
+              </div>
             <div className='features-options-zone'>
               <div className='option-button' onClick={() => addMouth("Mouth-1.png")}>
                 <img className='features' src={process.env.PUBLIC_URL + '/Images/Mouth-1.png'} alt="" />
@@ -287,9 +307,6 @@ function Options() {
               </div>
               <div className='option-button' onClick={() => addMouth("Mouth-10.png")}>
                 <img className='features' src={process.env.PUBLIC_URL + '/Images/Mouth-10.png'} alt="" />
-              </div>
-              <div className='option-button' onClick={() => changeEditing(0)}>
-                <p className='no-margin'>Back</p>
               </div>
             </div>
           </div>

@@ -32,17 +32,17 @@ footer {
 }
 
 .zone-container {
-  margin-top: -50px;
+  margin-top: 50px;
   position: relative;
-  width: 850px;
+  width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .creation-zone {
   position: absolute;
-  width: 850px;
-  height: 850px;
+  width: 600px;
+  height: 600px;
   /* border: 1px solid white; */
 }
 
@@ -61,7 +61,7 @@ footer {
 
 .pumpkin-options-zone {
   position: absolute;
-  width: 550px;
+  width: 440px;
   height: 140px;
   /* overflow-x: scroll;
   overflow-y: hidden; */
@@ -69,7 +69,7 @@ footer {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  left: 65px;
+  left: 125px;
 }
 
 .features-options-zone {
@@ -107,14 +107,16 @@ footer {
   background-color: rgba(255, 255, 255, 0.100);
   position: relative;
   width: 690px;
-  margin-left: auto;
-  margin-right: auto;
   height: 140px;
-  margin-top: 700px;
+  margin-top: 500px;
   /* margin-bottom: 60px; */
   display: flex;
   flex-wrap: nowrap;
   border-radius: 5px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -345px;
 }
 
 .scroll-options-container {
@@ -124,47 +126,87 @@ footer {
   margin-left: auto;
   margin-right: auto;
   height: 140px;
-  margin-top: 700px;
-  /* margin-bottom: 60px; */
+  /* margin-top: 500px; */
   display: flex;
   flex-wrap: nowrap;
   border-radius: 5px;
   padding-left: 15px;
   padding-right: 15px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -345px;
 }
 
 .pumpkin {
   position: absolute;
   z-index: 1;
-  left: 25px;
-  bottom: 200px;
-  min-height: 800px;
-  max-height: 800px;
+  left: 0px;
+  bottom: 140px;
+  min-height: 600px;
+  max-height: 600px;
 }
 
 .eyes {
   position: absolute;
-  bottom: 440px;
-  left: 300px;
+  bottom: 310px;
+  left: 200px;
+  width: 200px;
   z-index: 2;
 }
 
 .glow {
   position: absolute;
+  width: 600px;
   left: 0px;
 }
 
 .nose {
   position: absolute;
-  bottom: 370px;
-  left: 300px;
+  bottom: 250px;
+  left: 200px;
+  width: 200px;
   z-index: 2;
+}
+
+.animated {
+   
+  animation: fadeIn 0.5s;
+  -webkit-animation: fadeIn 0.5s;
+  -moz-animation: fadeIn 0.5s;
+  -o-animation: fadeIn 0.5s;
+  -ms-animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .mouth {
   position: absolute;
-  bottom: 290px;
-  left: 300px;
+  bottom: 170px;
+  left: 175px;
   z-index: 2;
 }
 
@@ -211,8 +253,14 @@ footer {
 
 .byoj {
   position: absolute;
-  right: 20px;
   z-index: 5;
+  left: 50%;
+  margin-left: -240px;
+}
+
+.back-button {
+  position: absolute;
+  left: -120px;
 }
 
 /* #canvas {
